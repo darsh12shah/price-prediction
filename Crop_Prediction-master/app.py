@@ -1,10 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Sat Mar  2 21:46:27 2019
-
-@author: PRATYUSH, Rahul, Somya, Abhay
-"""
-
 from flask import Flask, render_template
 from flask_cors import CORS, cross_origin
 import numpy as np
@@ -24,7 +18,6 @@ commodity_dict = {
     "arhar": "static/Arhar.csv",
     "bajra": "static/Bajra.csv",
     "barley": "static/Barley.csv",
-    "copra": "static/Copra.csv",
     "cotton": "static/Cotton.csv",
     "sesamum": "static/Sesamum.csv",
     "gram": "static/Gram.csv",
@@ -33,12 +26,9 @@ commodity_dict = {
     "maize": "static/Maize.csv",
     "masoor": "static/Masoor.csv",
     "moong": "static/Moong.csv",
-    "niger": "static/Niger.csv",
     "paddy": "static/Paddy.csv",
     "ragi": "static/Ragi.csv",
-    "rape": "static/Rape.csv",
     "jute": "static/Jute.csv",
-    "safflower": "static/Safflower.csv",
     "soyabean": "static/Soyabean.csv",
     "sugarcane": "static/Sugarcane.csv",
     "sunflower": "static/Sunflower.csv",
@@ -52,7 +42,6 @@ base = {
     "Arhar": 3200,
     "Bajra": 1175,
     "Barley": 980,
-    "Copra": 5100,
     "Cotton": 3600,
     "Sesamum": 4200,
     "Gram": 2800,
@@ -61,11 +50,8 @@ base = {
     "Maize": 1175,
     "Masoor": 2800,
     "Moong": 3500,
-    "Niger": 3500,
     "Ragi": 1500,
-    "Rape": 2500,
     "Jute": 1675,
-    "Safflower": 2500,
     "Soyabean": 2200,
     "Sugarcane": 2250,
     "Sunflower": 3700,
@@ -373,8 +359,7 @@ if __name__ == "__main__":
     commodity_list.append(bajra)
     barley = Commodity(commodity_dict["barley"])
     commodity_list.append(barley)
-    copra = Commodity(commodity_dict["copra"])
-    commodity_list.append(copra)
+    
     cotton = Commodity(commodity_dict["cotton"])
     commodity_list.append(cotton)
     sesamum = Commodity(commodity_dict["sesamum"])
@@ -391,18 +376,15 @@ if __name__ == "__main__":
     commodity_list.append(masoor)
     moong = Commodity(commodity_dict["moong"])
     commodity_list.append(moong)
-    niger = Commodity(commodity_dict["niger"])
-    commodity_list.append(niger)
+  
     paddy = Commodity(commodity_dict["paddy"])
     commodity_list.append(paddy)
     ragi = Commodity(commodity_dict["ragi"])
     commodity_list.append(ragi)
-    rape = Commodity(commodity_dict["rape"])
-    commodity_list.append(rape)
+    
     jute = Commodity(commodity_dict["jute"])
     commodity_list.append(jute)
-    safflower = Commodity(commodity_dict["safflower"])
-    commodity_list.append(safflower)
+    
     soyabean = Commodity(commodity_dict["soyabean"])
     commodity_list.append(soyabean)
     sugarcane = Commodity(commodity_dict["sugarcane"])
