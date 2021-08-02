@@ -125,8 +125,6 @@ class Commodity:
 @app.route('/')
 def index():
     context = {
-        "top5": TopFiveWinners(),
-        "bottom5": TopFiveLosers(),
         "sixmonths": SixMonthsForecast()
     }
     return render_template('index.html', context=context)
@@ -181,62 +179,6 @@ def ticker(item, number):
 
     #print('context: ', context)
     return context
-
-
-def TopFiveWinners():
-    current_month = datetime.now().month
-    current_year = datetime.now().year
-    current_rainfall = annual_rainfall[current_month - 1]
-    prev_month = current_month - 1
-    prev_rainfall = annual_rainfall[prev_month - 1]
-    current_month_prediction = []
-    prev_month_prediction = []
-    change = []
-
-    for i in commodity_list:
-        current_predict = i.getPredictedValue([float(current_month), current_year, current_rainfall])
-        current_month_prediction.append(current_predict)
-        prev_predict = i.getPredictedValue([float(prev_month), current_year, prev_rainfall])
-        prev_month_prediction.append(prev_predict)
-        change.append((((current_predict - prev_predict) * 100 / prev_predict), commodity_list.index(i)))
-    sorted_change = change
-    sorted_change.sort(reverse=True)
-    # print(sorted_change)
-    to_send = []
-    for j in range(0, 5):
-        perc, i = sorted_change[j]
-        name = commodity_list[i].getCropName().split('/')[1]
-        to_send.append([name, round((current_month_prediction[i] * base[name]) / 100, 2), round(perc, 2)])
-    #print(to_send)
-    return to_send
-
-
-def TopFiveLosers():
-    current_month = datetime.now().month
-    current_year = datetime.now().year
-    current_rainfall = annual_rainfall[current_month - 1]
-    prev_month = current_month - 1
-    prev_rainfall = annual_rainfall[prev_month - 1]
-    current_month_prediction = []
-    prev_month_prediction = []
-    change = []
-
-    for i in commodity_list:
-        current_predict = i.getPredictedValue([float(current_month), current_year, current_rainfall])
-        current_month_prediction.append(current_predict)
-        prev_predict = i.getPredictedValue([float(prev_month), current_year, prev_rainfall])
-        prev_month_prediction.append(prev_predict)
-        change.append((((current_predict - prev_predict) * 100 / prev_predict), commodity_list.index(i)))
-    sorted_change = change
-    sorted_change.sort()
-    to_send = []
-    for j in range(0, 5):
-        perc, i = sorted_change[j]
-        name = commodity_list[i].getCropName().split('/')[1]
-        to_send.append([name, round((current_month_prediction[i] * base[name]) / 100, 2), round(perc, 2)])
-   # print(to_send)
-    return to_send
-
 
 
 def SixMonthsForecast():
