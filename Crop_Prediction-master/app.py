@@ -75,7 +75,7 @@ class Commodity:
 
         # Fitting decision tree regression to dataset
         from sklearn.tree import DecisionTreeRegressor
-        depth = random.randrange(7,18)
+        depth = random.randrange(7, 18)
         self.regressor = DecisionTreeRegressor(max_depth=depth)
         self.regressor.fit(self.X, self.Y)
         #y_pred_tree = self.regressor.predict(X_test)
