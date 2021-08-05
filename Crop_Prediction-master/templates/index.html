@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <style>
-    h4 { color: #FFFFFF; }
-  </style>
-
   <title>Crop Price Predictor</title>
   <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -30,20 +26,21 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         
 </head>
-<body class="main" background="https://www.xmple.com/wallpaper/cyan-solid-color-single-plain-one-colour-1920x1080-c-053234-f-24.svg">
+<body class="main">
   <div>
 
 
 
-	<div>
+	<div class="nav-wrapper">
 
-		<h3 class="col s3"><a href="#" background="https://www.htmlcsscolor.com/preview/gallery/00FF55.png">
+		<h3 class="card-panel #00d54f amber lighten-2 center valign-wrapper center"><a class="brand-logo  #ffd54f-text text-lighten-4" href="#">
           <span>CROP PRICE PREDICTOR</span></a>
           </a></h3><h3>
 
 	</div>
+
   </div>
-  <h4>Explore by commodity</h4>
+  <h5>Explore by commodity</h5>
   <div class="row">
     <div class="col s3">
       <a href="http://localhost:5000/commodity/paddy" style="color: #000000">
@@ -148,7 +145,7 @@
       <div class="card grey lighten-4">
         <div class="card-content row valign-wrapper">
           <div class="col s3">
-          <img src="https://img.icons8.com/color/48/000000/potato.png">
+          <img src="https://img.icons8.com/office/30/000000/rope.png">
         </div>
         <div class="col s9">
           <span class="card-title">Raw Jute</span>
@@ -167,7 +164,7 @@
           <img src="https://img.icons8.com/color/48/000000/sesame.png">
         </div>
         <div class="col s9">
-          <span class="card-title">Gingelly Seed(Sesamum)</span>
+          <span class="card-title">Sesamum</span>
         </div>
         </div>
       </div>
@@ -290,7 +287,7 @@
       <div class="card grey lighten-4">
         <div class="card-content row valign-wrapper">
           <div class="col s3">
-          <img src="https://img.icons8.com/color/48/000000/potato.png">
+            <img src="https://img.icons8.com/emoji/48/000000/sheaf-of-rice.png">
         </div>
         <div class="col s9">
           <span class="card-title">Jowar</span>
@@ -303,7 +300,7 @@
       <div class="card grey lighten-4">
         <div class="card-content row valign-wrapper">
           <div class="col s3">
-          <img src="https://img.icons8.com/color/48/000000/potato.png">
+          <img src="data:image/png;base48,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">
         </div>
         <div class="col s9">
           <span class="card-title">Bajra</span>
